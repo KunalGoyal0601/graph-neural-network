@@ -258,8 +258,6 @@ graph-neural-network/
 │
 ├── intership ppt/
 │   └── NIFTY_Geopolitical_Dissertation_Presentation_Humanized_v5.pptx
-│
-└── classical_performance.png
 ```
 
 > Folder names such as `Preprossing`, `02_Feature_engeniearing`, `dissereation_report`, and `intership ppt` reflect the current repository and have intentionally been preserved in this documentation.
