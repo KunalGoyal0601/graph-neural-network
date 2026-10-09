@@ -1,0 +1,48 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Jupyter temporary files
+.ipynb_checkpoints/
+
+# Local editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+~$*
+
+# Build and packaging output
+build/
+dist/
+*.egg-info/
+
+# Trained model artifacts (keep only if intentionally curated for release)
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.pickle
+*.joblib
