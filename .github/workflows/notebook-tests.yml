@@ -1,4 +1,4 @@
-name: GNN data-path tests
+name: GNN clean-environment test
 
 on:
   push:
@@ -6,11 +6,23 @@ on:
   workflow_dispatch:
 
 jobs:
-  smoke-test:
+  clean-notebook:
     runs-on: ubuntu-latest
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: python -m unittest discover -s tests -v
+      - name: Install notebook runtime dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install numpy pandas matplotlib networkx scikit-learn torch nbconvert ipykernel
+      - name: Check repository dataset and notebook path
+        run: python -m unittest discover -s tests -v
+      - name: Execute GNN notebook in the clean environment
+        run: |
+          jupyter nbconvert --to notebook --execute \
+            "notebooks/models/GNN_final_single_path_executable_ready_executed (1).ipynb" \
+            --output /tmp/gnn-executed.ipynb \
+            --ExecutePreprocessor.timeout=1800
