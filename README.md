@@ -104,6 +104,8 @@ The repository currently contains raw, cleaned, and engineered CSVs alongside th
 
 Important data artefacts currently include `master_dataset.csv`, `master_with_target.csv`, `featured_sector_data.csv`, `featured_macro_data.csv`, `featured_gdelt_data.csv`, `combined_sector_close_prices.csv`, `combined_macro_close_prices.csv`, and `gnn_fixed_results_summary.csv`.
 
+The final executable GNN notebook now searches for `Data/featured_data/master_with_target.csv` relative to the repository root or notebook folder. To use a different prepared file, set `GNN_DATA_PATH` before starting Jupyter. It reports an actionable error if no input is found.
+
 ## Recommended notebook execution order
 
 1. Run the applicable notebooks in `Data/data_notebooks/01_Data_cleaning/`.
